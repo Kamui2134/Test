@@ -1,12 +1,10 @@
 <script setup lang="ts">
 const catImages = ref<string[]>([])
-const catImagesNeed = computed(() => {
+const catImagesNeed = computed<globalThis.Ref<number>>(() => {
 	return 3 - catImages.value.length
 })
 
 const fetchThreeCats = async () => {
-	catImages.value = []
-
 	for (let i = 0; i < 3; i++) {
 		try {
 			const response: BlobPart = await $fetch('https://cataas.com/cat', {
