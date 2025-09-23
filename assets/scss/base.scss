@@ -106,7 +106,7 @@ body > #__nuxt {
 		justify-content: center;
 	}
 
-	& > *:is(section) {
+	&:not(.main--pre-land) > *:is(section) {
 		width: 100%;
 		position: relative;
 

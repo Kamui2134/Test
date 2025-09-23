@@ -16,7 +16,7 @@
 
 	&__container {
 		@include text('title', $color-white);
-		width: 1200px;
+		width: min(1200px, 100%);
 		background-color: $color-blue-1;
 		display: flex;
 		justify-content: center;

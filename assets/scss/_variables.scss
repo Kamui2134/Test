@@ -39,7 +39,7 @@ $fontFamily-Inter: 'Inter', 'Arial', sans-serif;
 
 $font-hero-title: normal $weight-bold $fontSize-64 $fontFamily-Inter;
 $font-title: normal $weight-bold $fontSize-40 $fontFamily-Inter;
-$font-subtitle: normal $weight-medium $fontSize-24 $fontFamily-Inter;
+$font-subtitle: normal $weight-semibold $fontSize-24 $fontFamily-Inter;
 $font-text: normal $weight-medium $fontSize-16 $fontFamily-Inter;
 $font-btn: normal $weight-bold $fontSize-16 $fontFamily-Inter;
 $font-link: normal $weight-bold $fontSize-16 $fontFamily-Inter;
@@ -49,7 +49,7 @@ $lineHeight-hero-title: 1.1;
 $lineHeight-title: 1.1;
 $lineHeight-subtitle: 1.1;
 $lineHeight-text: 1.5;
-$lineHeight-btn: 1.5;
+$lineHeight-btn: 1;
 $lineHeight-link: 1.5;
 
 @mixin text($type, $color, $text-wrap: wrap) {
@@ -80,5 +80,6 @@ $lineHeight-link: 1.5;
 	@if $type == 'link' {
 		font: $font-link;
 		line-height: $lineHeight-link;
+		text-decoration: underline;
 	}
 }
