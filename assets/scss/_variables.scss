@@ -1,0 +1,84 @@
+@use 'sass:math';
+
+// VARIABLES
+$color-white: rgba(255, 255, 255, 1);
+$color-black-1: rgba(51, 51, 51, 1);
+$color-blue-1: rgba(74, 144, 226, 1);
+$color-gray-1: rgba(244, 246, 249, 1);
+$color-gray-2: rgb(215, 229, 246);
+
+// Размеры шрифтов
+@function strip-unit($value) {
+	@return math.div($value, ($value * 0 + 1));
+}
+
+@function toRem($value) {
+	@return math.div(strip-unit($value), 16) + rem;
+}
+
+$fontSize-14: toRem(14px);
+$fontSize-16: toRem(16px);
+$fontSize-20: toRem(20px);
+$fontSize-24: toRem(24px);
+$fontSize-32: toRem(32px);
+$fontSize-40: toRem(40px);
+$fontSize-64: toRem(64px);
+$fontSize-96: toRem(96px);
+
+// Насыщенность шрифтов
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-heavy: 800;
+$weight-black: 900;
+
+// Шрифты
+$fontFamily-Inter: 'Inter', 'Arial', sans-serif;
+
+$font-hero-title: normal $weight-bold $fontSize-64 $fontFamily-Inter;
+$font-title: normal $weight-bold $fontSize-40 $fontFamily-Inter;
+$font-subtitle: normal $weight-medium $fontSize-24 $fontFamily-Inter;
+$font-text: normal $weight-medium $fontSize-16 $fontFamily-Inter;
+$font-btn: normal $weight-bold $fontSize-16 $fontFamily-Inter;
+$font-link: normal $weight-bold $fontSize-16 $fontFamily-Inter;
+
+$lineHeight-base: 1;
+$lineHeight-hero-title: 1.1;
+$lineHeight-title: 1.1;
+$lineHeight-subtitle: 1.1;
+$lineHeight-text: 1.5;
+$lineHeight-btn: 1.5;
+$lineHeight-link: 1.5;
+
+@mixin text($type, $color, $text-wrap: wrap) {
+	color: $color;
+	text-wrap: $text-wrap;
+
+	@if $type == 'hero-title' {
+		font: $font-hero-title;
+		line-height: $lineHeight-hero-title;
+		text-decoration: underline;
+	}
+	@if $type == 'title' {
+		font: $font-title;
+		line-height: $lineHeight-title;
+	}
+	@if $type == 'subtitle' {
+		font: $font-subtitle;
+		line-height: $lineHeight-subtitle;
+	}
+	@if $type == 'text' {
+		font: $font-text;
+		line-height: $lineHeight-text;
+	}
+	@if $type == 'btn' {
+		font: $font-btn;
+		line-height: $lineHeight-btn;
+	}
+	@if $type == 'link' {
+		font: $font-link;
+		line-height: $lineHeight-link;
+	}
+}
