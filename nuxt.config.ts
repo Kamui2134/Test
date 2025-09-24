@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 				{ charset: 'utf-8' },
-				{ name: 'description', content: '' },
+				{ name: 'description', content: 'Test Test' },
 				{ name: 'keywords', content: 'nuxt, vue, javascript' },
 			],
 		},
